@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160705075005) do
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "descirption"
+    t.string   "description"
     t.string   "text"
   end
 
