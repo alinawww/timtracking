@@ -1,6 +1,11 @@
-<h1>My projects</h1>
-  <ul>
-    <%@projects.each do |project| %>
-      <li><%= project.name%> - <%= project.description%></li>
-    <%end%>
-  </ul>
+<div class="row">
+  <div class="col-12">
+    <h1>My projects</h1>
+      <ul>
+        <%@projects.each do |project| %>
+          <li><%= project.name%> - <%= project.description%></li>
+        <%end%>
+      </ul>
+      <%= link_to 'Create new project', projects_new_path%>
+  </div>
+</div>

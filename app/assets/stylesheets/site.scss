@@ -189,3 +189,22 @@ $breakpoint-large: 60em; // 960px
     display: block;
   }
 }
+
+input, textarea {
+    padding: 10px;
+    font-size: 18px;
+    border:1px solid #ddd;
+    width:100%;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background: #222;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    width:100%;
+}
