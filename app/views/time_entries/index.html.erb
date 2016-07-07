@@ -7,9 +7,9 @@
             <p>Total time: <%= time_entry.hours%>:<%= time_entry.minutes%></p>
             <p>Comments: <%= time_entry.comments%></p>
             <p>Date: <%= time_entry.date%> </p>
+            <%= link_to "edit", time_entry_edit_path(@my_project, time_entry)%>
           </li>
         <%end%>
       </ul>
-
   </div>
 </div>
