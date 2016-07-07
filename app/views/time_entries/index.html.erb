@@ -8,6 +8,7 @@
             <p>Comments: <%= time_entry.comments%></p>
             <p>Date: <%= time_entry.date%> </p>
             <%= link_to "edit", time_entry_edit_path(@my_project, time_entry)%>
+            <%= link_to "delete", project_time_entry_path(@my_project, time_entry), method: :delete, data: {confirm:'Are you sure?'}%>
           </li>
         <%end%>
       </ul>

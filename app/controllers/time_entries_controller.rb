@@ -24,9 +24,7 @@ class TimeEntriesController < ApplicationController
     @my_project = Project.find(params[:project_id])
     @my_entry    = @my_project.time_entries.find(params[:id])
   end
-  def entry_params
-    params.require(:time_entry).permit(:hours, :minutes, :date)
-  end
+
   def update
     @my_project = Project.find(params[:project_id])
     @my_entry   = @my_project.time_entries.find(params[:id])
@@ -41,6 +39,15 @@ class TimeEntriesController < ApplicationController
     end
 
     #strong params for secure update
-
+    private
+    def entry_params
+      params.require(:time_entry).permit(:hours, :minutes, :date)
+    end
+  end
+  def delete
+    @my_project = Project.find(params[:project_id])
+    @my_entry = @my_project.time_entries.find(params[:id])
+    
+    @my_entry.destroy
   end
 end
