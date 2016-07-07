@@ -13,11 +13,13 @@ class TimeEntriesController < ApplicationController
     @my_project = Project.find(params[:project_id])
     @my_entry = @my_project.time_entries.create(entry_params)
     if @my_entry
-      redirect_to action:'index',
-                  controller:'time_entries',
-                  project_id:@my_project.id
+      flash[:notice] = "Time entry sucessfull"
+      redirect_to action: "index",
+                  controller: "time_entries",
+                  project_id: @my_project.id
     else
-      render 'new'
+      flash[:error] = "that won't work"
+      render "new"
     end
   end
   def edit
@@ -39,15 +41,15 @@ class TimeEntriesController < ApplicationController
     end
 
     #strong params for secure update
-    private
-    def entry_params
-      params.require(:time_entry).permit(:hours, :minutes, :date)
-    end
+  end
+
+  def entry_params
+    params.require(:time_entry).permit(:hours, :minutes, :date)
   end
   def delete
     @my_project = Project.find(params[:project_id])
     @my_entry = @my_project.time_entries.find(params[:id])
-    
+
     @my_entry.destroy
   end
 end
